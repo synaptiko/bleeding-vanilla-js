@@ -15,3 +15,8 @@ Experimental project which uses the newest features of Javascript on frontend & 
 - [koa-mount](https://github.com/koajs/mount)
 - experimental HTTP/2
 - experimental ES2015 Modules
+
+## Dependencies
+
+- yarn
+- node 9.4.0
