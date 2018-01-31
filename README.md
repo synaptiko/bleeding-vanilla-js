@@ -6,6 +6,7 @@ Experimental project which uses the newest features of Javascript on frontend & 
 
 - [hyperHTML](https://github.com/WebReflection/hyperHTML) in ES2015 Module mode
 - native [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for API
+- native async/await
 - `<script type="module">`
 
 ## Backend side
@@ -15,6 +16,7 @@ Experimental project which uses the newest features of Javascript on frontend & 
 - [koa-mount](https://github.com/koajs/mount)
 - experimental HTTP/2
 - experimental ES2015 Modules
+- native async/await
 
 ## Dependencies
 
