@@ -1,0 +1,19 @@
+{
+	"name": "bleeding-vanilla-js",
+	"version": "0.0.1",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"bootstrap": "yarn && ./generate-certs.sh",
+		"start": "node --experimental-modules index"
+	},
+	"dependencies": {
+		"hyperhtml": "^2.5.5",
+		"koa": "^2.4.1",
+		"koa-mount": "^3.0.0",
+		"koa-static": "^4.0.2"
+	},
+	"engines": {
+		"node": "9.4.0"
+	}
+}
