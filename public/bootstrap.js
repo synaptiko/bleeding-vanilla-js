@@ -12,12 +12,12 @@ async function loadData() {
 }
 
 function update(render) {
-  render`
-    <div>
-      <h1>${header}</h1>
-      <h2>It is ${new Date().toLocaleTimeString()}.</h2>
-    </div>
-  `
+	render`
+		<div>
+			<h1>${header}</h1>
+			<h2>It is ${new Date().toLocaleTimeString()}.</h2>
+		</div>
+	`
 }
 
 loadData()

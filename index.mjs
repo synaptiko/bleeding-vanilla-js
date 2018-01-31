@@ -5,15 +5,15 @@ import koaStatic from 'koa-static'
 import koaMount from 'koa-mount'
 
 const options = {
-  key: fs.readFileSync('localhost-privkey.pem'),
-  cert: fs.readFileSync('localhost-cert.pem')
+	key: fs.readFileSync('localhost-privkey.pem'),
+	cert: fs.readFileSync('localhost-cert.pem')
 }
 const port = 8443
 const app = new koa()
 
 async function api(ctx, next) {
-  await next()
-  ctx.body = {
+	await next()
+	ctx.body = {
 		content: 'Hello, world! From API!'
 	}
 }
