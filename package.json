@@ -11,9 +11,10 @@
 		"hyperhtml": "^2.5.5",
 		"koa": "^2.4.1",
 		"koa-mount": "^3.0.0",
-		"koa-static": "^4.0.2"
+		"koa-static": "^4.0.2",
+		"navigo": "^7.0.0"
 	},
 	"engines": {
-		"node": "9.4.0"
+		"node": "9.5.0"
 	}
 }

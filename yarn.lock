@@ -225,6 +225,10 @@ mz@^2.6.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
+navigo@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/navigo/-/navigo-7.0.0.tgz#f8f05aefc13a4e1a15a2748433cff8b9b0558a0b"
+
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"

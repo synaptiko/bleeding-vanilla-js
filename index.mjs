@@ -20,6 +20,7 @@ async function api(ctx, next) {
 
 app.use(koaStatic('public'))
 app.use(koaMount('/hyperhtml', koaStatic('node_modules/hyperhtml/esm')))
+app.use(koaMount('/navigo', koaStatic('node_modules/navigo/src')))
 app.use(koaMount('/api', api))
 
 const server = http2.createSecureServer(options, app.callback())
