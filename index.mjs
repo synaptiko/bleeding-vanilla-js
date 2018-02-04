@@ -17,6 +17,7 @@ async function api (ctx, next) {
 app.use(koaMount('/routes.json', sendRoutes))
 app.use(koaMount('/hyperhtml', koaStatic('node_modules/hyperhtml/esm')))
 app.use(koaMount('/onpushstate', koaStatic('node_modules/onpushstate')))
+app.use(koaMount('/tachyons', koaStatic('node_modules/tachyons/css')))
 app.use(koaMount('/path-to-regexp', koaStatic('node_modules/path-to-regexp')))
 app.use(koaMount('/api', api))
 app.use(koaStaticIndexFallback('public', { index: 'index.html' }))

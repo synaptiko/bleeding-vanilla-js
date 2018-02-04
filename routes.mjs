@@ -40,12 +40,12 @@ async function refreshRoutes () {
 }
 
 export async function isRoute (pathname) {
-  const { routeRegexps } = await refreshRoutes()
+  const { routes, routeRegexps } = await refreshRoutes()
 
   for (let i = 0, ln = routeRegexps.length; i < ln; i += 1) {
     const routeRegexp = routeRegexps[i]
 
-    if (routeRegexp.test(pathname)) {
+    if (routes[i][0] !== '*' && routeRegexp.test(pathname)) {
       return true
     }
   }

@@ -18,7 +18,8 @@
     "koa-static": "^4.0.2",
     "onpushstate": "github:synaptiko/onpushstate#do-not-prevent-ctrl-shift-alt-click",
     "path-to-regexp": "github:synaptiko/path-to-regexp#index-as-esmodule",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "tachyons": "^4.9.1"
   },
   "engines": {
     "node": "9.5.0"
