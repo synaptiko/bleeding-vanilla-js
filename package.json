@@ -1,19 +1,32 @@
 {
-	"name": "bleeding-vanilla-js",
-	"version": "0.0.1",
-	"main": "index.js",
-	"license": "MIT",
-	"scripts": {
-		"bootstrap": "yarn && ./generate-certs.sh",
-		"start": "node --experimental-modules index"
-	},
-	"dependencies": {
-		"hyperhtml": "^2.5.5",
-		"koa": "^2.4.1",
-		"koa-mount": "^3.0.0",
-		"koa-static": "^4.0.2"
-	},
-	"engines": {
-		"node": "9.4.0"
-	}
+  "name": "bleeding-vanilla-js",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "yarn && ./generate-certs.sh",
+    "start": "node --experimental-modules index",
+    "lint": "standard --fix \"**/*.js\" \"**/*.mjs\""
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.1",
+    "hyperhtml": "^2.5.5",
+    "koa": "^2.4.1",
+    "koa-compose": "^4.0.0",
+    "koa-mount": "^3.0.0",
+    "koa-send": "^4.1.2",
+    "koa-static": "^4.0.2",
+    "onpushstate": "github:synaptiko/onpushstate#do-not-prevent-ctrl-shift-alt-click",
+    "path-to-regexp": "github:synaptiko/path-to-regexp#index-as-esmodule",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": "9.5.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch"
+    ]
+  }
 }
