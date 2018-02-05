@@ -1150,9 +1150,9 @@ only@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/only/-/only-0.0.2.tgz#2afde84d03e50b9a8edc444e30610a70295edfb4"
 
-"onpushstate@github:synaptiko/onpushstate#do-not-prevent-ctrl-shift-alt-click":
-  version "0.1.1"
-  resolved "https://codeload.github.com/synaptiko/onpushstate/tar.gz/2ca3cc7d54ee65c5b77dfd7cc9a494c48df07f7a"
+onpushstate@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/onpushstate/-/onpushstate-0.2.0.tgz#03acde36efb24da1a3216f88d8a10b5a86ff9951"
 
 optionator@^0.8.2:
   version "0.8.2"

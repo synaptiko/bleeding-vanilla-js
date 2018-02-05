@@ -16,7 +16,7 @@
     "koa-mount": "^3.0.0",
     "koa-send": "^4.1.2",
     "koa-static": "^4.0.2",
-    "onpushstate": "github:synaptiko/onpushstate#do-not-prevent-ctrl-shift-alt-click",
+    "onpushstate": "^0.2.0",
     "path-to-regexp": "github:synaptiko/path-to-regexp#index-as-esmodule",
     "standard": "^10.0.3",
     "tachyons": "^4.9.1"
