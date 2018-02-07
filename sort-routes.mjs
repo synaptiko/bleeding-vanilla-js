@@ -31,3 +31,12 @@ export default function sortRoutes (a, b) {
 
   return result
 }
+
+// FIXME jprokop: there is a bug with this order; write test for it later
+/*
+Actual result:
+[["/","index"],["/list/:id/edit","list.edit"],["/list/:id","list.item"],["/list","list"],["/list/add","list.add"],["*","not-found"]]
+
+Expected result:
+[["/","index"],["/list/add","list.add"],["/list/:id/edit","list.edit"],["/list/:id","list.item"],["/list","list"],["*","not-found"]]
+*/

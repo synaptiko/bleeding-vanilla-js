@@ -1,10 +1,11 @@
-import render from '../templates/layout.mjs'
+import layout from '../templates/layout.mjs'
 
 export const pathname = '*'
 export function handle (name, args, router) {
+  const render = layout(router)
   render`
     <div>
-      <h1>404</h1>
+      <h2>404</h2>
     </div>
   `
 }
