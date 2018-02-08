@@ -1,7 +1,7 @@
-import slotableRender from './slotable-render.mjs'
+import { bind } from '/hyperhtml/index.js'
 
-export default function layout (router) {
-  const render = slotableRender(document.body)
+export default function layout ({ router, content }) {
+  const render = bind(document.body)
 
   return render`<div class="container">
     <h1>Layout</h1>
@@ -15,7 +15,7 @@ export default function layout (router) {
       </br>
     </div>
     <div class="body">
-      ${render.slot}
+      ${content}
     </div>
   </div>`
 }
