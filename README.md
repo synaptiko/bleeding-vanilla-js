@@ -10,6 +10,7 @@ Experimental project which uses the newest features of Javascript on frontend & 
 - native async/await
 - native EventTarget & Event
 - `<script type="module">`
+- native WeakMap
 
 ## Backend side
 
