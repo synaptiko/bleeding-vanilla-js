@@ -1,16 +1,20 @@
 import { wire } from '/hyperhtml/index.js'
-import layout from '../templates/layout.mjs'
-
-const render = wire()
+import Layout from '../templates/layout.mjs'
 
 export const pathname = '/list/add'
-export function handle (router) {
-  const header = router.route.name
+export default class ListAddRoute {
+  static get layout () { return Layout }
 
-  layout({
-    router,
-    content: render`<div>
+  constructor ({ router }) {
+    this.router = router
+    this.name = router.route.name
+    this.html = wire()
+  }
+
+  render () {
+    const header = this.name
+    return this.html`<div>
       <h2>${header}</h2>
     </div>`
-  })
+  }
 }

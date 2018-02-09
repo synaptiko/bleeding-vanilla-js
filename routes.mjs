@@ -18,23 +18,37 @@ async function readPathnames (routesDir, files) {
   }).filter((pathname) => !!pathname))
 }
 
+function parseAndSplitBySlash (pathname) {
+  const tokens = parse(pathname)
+  return tokens.reduce((result, part) => {
+    if (typeof part === 'string') {
+      result.push(...part.split('/').filter(sub => sub.length > 0))
+    } else {
+      result.push(part)
+    }
+    return result
+  }, [])
+}
+
 async function refreshRoutes () {
   // TODO jprokop: add caching mechanism? (development vs production mode)
   const files = await readdir(routesDir)
   const names = files.map((route) => route.replace(/\.mjs$/, ''))
   const pathnames = await readPathnames(routesDir, files)
-  const result = pathnames.map((pathname, i) => [
-    pathname,
-    names[i],
-    pathname === '*' ? /.*/g : pathToRegexp(pathname),
-    pathname === '*' ? ['*'] : parse(pathname)
-  ])
+  const result = pathnames.map((pathname, i) => {
+    return {
+      pathname,
+      name: names[i],
+      regexp: (pathname === '*' ? /.*/g : pathToRegexp(pathname)),
+      tokens: (pathname === '*' ? ['*'] : parseAndSplitBySlash(pathname))
+    }
+  })
 
   result.sort(sortRoutes)
 
-  return result.reduce((map, [pathname, name, routeRegexp]) => {
+  return result.reduce((map, { pathname, name, regexp }) => {
     map.routes.push([pathname, name])
-    map.routeRegexps.push(routeRegexp)
+    map.routeRegexps.push(regexp)
     return map
   }, { routes: [], routeRegexps: [] })
 }

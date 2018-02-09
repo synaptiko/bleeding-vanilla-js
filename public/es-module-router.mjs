@@ -1,5 +1,4 @@
 import Router from './router.mjs'
-import { bind } from '/hyperhtml/index.js' // FIXME jprokop: only for test, later it will be handled by layout class
 
 export default class ESModuleRouter extends Router {
   constructor (routes) {
@@ -7,6 +6,7 @@ export default class ESModuleRouter extends Router {
 
     this.loadedRoutes = {}
     this.routeInstances = new WeakMap()
+    this.layoutInstances = new WeakMap()
   }
 
   async handle (router) {
@@ -28,21 +28,26 @@ export default class ESModuleRouter extends Router {
     }
 
     if (this.activeRoute !== routeInstance) {
-      if (this.activeRoute) {
-        this.activeRoute.deactivate()
-      }
-
-      routeInstance.activate()
+      if (this.activeRoute && this.activeRoute.deactivate) this.activeRoute.deactivate()
+      if (routeInstance.activate) routeInstance.activate()
 
       this.activeRoute = routeInstance
+
+      const LayoutClass = RouteClass.layout
+      let layoutInstance = this.layoutInstances.get(LayoutClass)
+
+      if (!layoutInstance) {
+        layoutInstance = new LayoutClass({ router })
+
+        this.layoutInstances.set(LayoutClass, layoutInstance)
+      }
+
+      layoutInstance.content = routeInstance.render()
+      layoutInstance.render()
+    } else {
+      if (routeInstance.refreshParams) routeInstance.refreshParams()
+      routeInstance.render()
     }
-
-    bind(document.body)`${routeInstance.render()}`
-
-    // previous action is an async action, it could happen that route was changed
-    // if (routeToLoad === router.route) {
-    //   route.handle(router)
-    // }
   }
 }
 
