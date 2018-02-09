@@ -7,7 +7,7 @@ import sortRoutes from './sort-routes.mjs'
 const routesDir = './public/routes'
 const readFile = util.promisify(fs.readFile)
 const readdir = util.promisify(fs.readdir)
-const pathnameRegexp = /^export const pathname = '(.*)'$/m
+const pathnameRegexp = /^ {2}static get pathname \(\) \{ return '(.*)' \}$/m
 
 async function readPathnames (routesDir, files) {
   // this is temporary and suboptimal solution until Node.js will support dynamic imports!

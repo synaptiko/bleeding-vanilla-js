@@ -1,8 +1,8 @@
 import { wire } from '/hyperhtml/index.js'
 import Layout from '../templates/layout.mjs'
 
-export const pathname = '/'
 export default class IndexRoute {
+  static get pathname () { return '/' }
   static get layout () { return Layout }
 
   constructor ({ router }) {

@@ -1,8 +1,8 @@
 import { wire } from '/hyperhtml/index.js'
 import Layout from '../templates/layout.mjs'
 
-export const pathname = '/list/add'
 export default class ListAddRoute {
+  static get pathname () { return '/list/add' }
   static get layout () { return Layout }
 
   constructor ({ router }) {
