@@ -1,13 +1,13 @@
 export default function sortRoutes (a, b) {
-  const pathnameA = a[0]
-  const pathnameB = b[0]
+  const pathnameA = a.pathname
+  const pathnameB = b.pathname
 
   if (pathnameA === pathnameB) return 0
   if (pathnameA === '*') return 1
   if (pathnameB === '*') return -1
 
-  const tokensA = a[3]
-  const tokensB = b[3]
+  const tokensA = a.tokens
+  const tokensB = b.tokens
   let result = 0
 
   for (let i = 0, ln = Math.min(tokensA.length, tokensB.length); i < ln; i += 1) {
@@ -27,16 +27,7 @@ export default function sortRoutes (a, b) {
     if (result !== 0) break
   }
 
-  result = result !== 0 ? result : (tokensB.length - tokensA.length)
+  result = result !== 0 ? result : (tokensA.length - tokensB.length)
 
   return result
 }
-
-// FIXME jprokop: there is a bug with this order; write test for it later
-/*
-Actual result:
-[["/","index"],["/list/:id/edit","list.edit"],["/list/:id","list.item"],["/list","list"],["/list/add","list.add"],["*","not-found"]]
-
-Expected result:
-[["/","index"],["/list/add","list.add"],["/list/:id/edit","list.edit"],["/list/:id","list.item"],["/list","list"],["*","not-found"]]
-*/

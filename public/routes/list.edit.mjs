@@ -1,17 +1,22 @@
 import { wire } from '/hyperhtml/index.js'
-import layout from '../templates/layout.mjs'
+import Layout from '../templates/layout.mjs'
 
-const render = wire()
+export default class ListEditRoute {
+  static get pathname () { return '/list/:id/edit' }
+  static get layout () { return Layout }
 
-export const pathname = '/list/:id/edit'
-export function handle (router) {
-  const header = router.route.name
-  const { id } = router.route.params
+  constructor ({ router }) {
+    this.router = router
+    this.name = router.route.name
+    this.params = router.route.params
+    this.html = wire()
+  }
 
-  layout({
-    router,
-    content: render`<div>
+  render () {
+    const header = this.name
+    const { id } = this.params
+    return this.html`<div>
       <h2>${header}: ${id}</h2>
     </div>`
-  })
+  }
 }
