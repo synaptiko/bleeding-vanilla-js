@@ -5,9 +5,14 @@ export default class ESModuleRouter extends Router {
     super(routes.map(([ route, name ]) => [ route, name, handler ]))
   }
 
-  async handle (name, params, router) {
-    const route = await import(`./routes/${name}.mjs`)
-    route.handle(name, params, router)
+  async handle (router) {
+    const routeToLoad = router.route
+    const route = await import(`./routes/${routeToLoad.name}.mjs`)
+
+    // previous action is an async action, it could happen that route was changed
+    if (routeToLoad === router.route) {
+      route.handle(router)
+    }
   }
 }
 
@@ -15,6 +20,6 @@ export default class ESModuleRouter extends Router {
 // it requires base Router to call handler with itself bound as `this`
 // the reason is that before super is called there is no `this`
 // but we need to initialize base router
-function handler () {
-  this.handle.apply(this, arguments)
+function handler (...args) {
+  this.handle.apply(this, args)
 }

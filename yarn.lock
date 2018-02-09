@@ -774,11 +774,11 @@ http-errors@~1.5.0:
     setprototypeof "1.0.2"
     statuses ">= 1.3.1 < 2"
 
-hyperhtml@^2.5.5:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.5.5.tgz#e85e9d4170bf51b95530607d0a0e351795acfb31"
+hyperhtml@^2.5.10:
+  version "2.5.10"
+  resolved "https://registry.yarnpkg.com/hyperhtml/-/hyperhtml-2.5.10.tgz#d52eac4fd07b73e7b06dbf5a4c8e354208cb0131"
   dependencies:
-    lightercollective "^0.0.1"
+    lightercollective "^0.0.3"
 
 ignore@^3.0.11, ignore@^3.0.9, ignore@^3.2.0:
   version "3.3.7"
@@ -1017,9 +1017,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lightercollective@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.0.1.tgz#ba514565677b09acbe584a88fb4a68fff2499a93"
+lightercollective@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.0.3.tgz#c58f01fde36f4d9432eda354c635a192fc291b2b"
 
 load-json-file@^4.0.0:
   version "4.0.0"

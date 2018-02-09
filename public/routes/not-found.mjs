@@ -4,7 +4,7 @@ import layout from '../templates/layout.mjs'
 const render = wire()
 
 export const pathname = '*'
-export function handle (name, args, router) {
+export function handle (router) {
   layout({
     router,
     content: render`<div>

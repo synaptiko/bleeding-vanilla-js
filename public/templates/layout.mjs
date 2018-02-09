@@ -12,7 +12,6 @@ export default function layout ({ router, content }) {
       <a href="${router.generate('list.item', { id: 'blah' })}">Show Item</a> |
       <a href="${router.generate('list.edit', { id: 'blah' })}">Edit Item</a> |
       <a href="/giberish">404</a>
-      </br>
     </div>
     <div class="body">
       ${content}

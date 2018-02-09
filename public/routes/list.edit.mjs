@@ -4,9 +4,9 @@ import layout from '../templates/layout.mjs'
 const render = wire()
 
 export const pathname = '/list/:id/edit'
-export function handle (name, args, router) {
-  const header = name
-  const { id } = args
+export function handle (router) {
+  const header = router.route.name
+  const { id } = router.route.params
 
   layout({
     router,

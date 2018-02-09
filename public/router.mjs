@@ -65,7 +65,12 @@ export default class Router {
           return map
         }, {})
 
-        handler.call(this, name, params, this)
+        this._route = Object.freeze({
+          name,
+          params: Object.freeze(params)
+        })
+
+        handler.call(this, this)
         break
       }
     }
@@ -73,5 +78,9 @@ export default class Router {
 
   handleEvent (event) {
     this.resolve()
+  }
+
+  get route () {
+    return this._route
   }
 }
